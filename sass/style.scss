@@ -401,7 +401,7 @@ button[type="submit"] {
     font-size: convertToRem(15);
   }
 }
-@media screen and (max-width:992px) {
+@media screen and (max-width:1200px) {
   .work-overlay,.work-img span:first-of-type,.icons-overlay{
     display: none !important;
   }
