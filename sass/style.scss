@@ -1,0 +1,411 @@
+@import "./base/mixin", "./base/_var.scss", "./base/placeholder",
+  "./base/function";
+@include fontSize("roboto", url("../fonts/Roboto-Regular.ttf"));
+@include fontSize("edu", url("../fonts/KaushanScript-Regular.ttf"));
+@include fontSize("monserate", url("../fonts/Montserrat-Regular.ttf"));
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+.sec-color {
+  color: #95e1d3;
+}
+.third-color {
+  color: #55c379;
+}
+
+body {
+  line-height: 1.7;
+}
+h1 {
+  font-size: 110px;
+  font-weight: 700;
+}
+h2,
+h3,
+h1,
+h4 {
+  font-family: "monserate";
+}
+h4 {
+  font-size: convertToRem(14);
+}
+p {
+  font-family: "roboto";
+  margin: 0;
+  font-size: convertToRem(13);
+}
+.second-color {
+  color: $second-color;
+}
+.top-header-text::before {
+  @include content("What we do");
+  @extend %after-before-style;
+  @extend %before-style;
+}
+.top-header-text::after {
+  @include content("");
+  width: convertToRem(57);
+  height: 0.1rem;
+  background-color: $main-color;
+  @extend %after-before-style;
+  top: 108%;
+  left: 50%;
+}
+//------------------------------------------------------------- start nav bar -------------------------------------------------------------->
+.nav-links{
+  color: $nav-color !important;
+  padding-bottom:2px ;
+  border-bottom:3px solid $nav-color;
+}
+
+.nav-link:hover{
+  color: $nav-color !important;
+  padding-bottom:2px ;
+  border-bottom:3px solid $nav-color;
+}
+nav.navbar {
+  z-index: 2;
+  transition: all 1s;
+}
+.navbarbg {
+  background-color: $main-color;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.arrow-up {
+  width: fit-content;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: $main-color;
+  color: $white-color;
+  display: none;
+  z-index: 3;
+}
+.show {
+  display: block;
+}
+//------------------------------------------------------------- start header -------------------------------------------------------------->
+header {
+  background-image: url(../images/bg-header.jpg);
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+}
+header .top-header-text::before {
+  @include content("creative templete");
+  width: 100%;
+  font-size: convertToRem(55);
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: convertToRem(30);
+  }
+  header .top-header-text::before {
+    font-size: convertToRem(30);
+  }
+  .carousel-indicators {
+    display: none !important;
+  }
+  header {
+    height: 50vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  h1 {
+    font-size: convertToRem(50);
+  }
+  header .top-header-text::before {
+    font-size: convertToRem(50);
+  }
+}
+
+header .top-header-text::after {
+  @include content("");
+  background-color: $white-color;
+}
+header {
+  position: relative;
+}
+.header-overlay {
+  opacity: 0.9;
+  @include gradient-colors;
+}
+.carousel-indicators .active {
+  background-color: $main-color !important;
+}
+.carousel-indicators [data-bs-target] {
+  height: 1px !important;
+}
+//------------------------------------------------------------- start about us -------------------------------------------------------------->
+h2 {
+  width: fit-content;
+}
+.story-item {
+  background-color: $second-color;
+}
+.icons-overlay,
+.story-img {
+  transition: all 0.3s ease-in-out;
+}
+.icons-overlay {
+  @include gradient-colors;
+}
+.icons-overlay:hover {
+  opacity: 1 !important;
+}
+.icons-overlay:hover,
+.story-item:hover .story-img {
+  transform: translate(-10px, -10px);
+}
+
+//------------------------------------------------------------- start numbers -------------------------------------------------------------->
+.numbers-section {
+  background-color: $second-color;
+  color: $white-color;
+}
+.numbers-section {
+  .number {
+    p:first-of-type {
+      font-size: convertToRem(65);
+      font-weight: 700;
+    }
+    p:last-of-type {
+      text-transform: uppercase;
+    }
+  }
+}
+//------------------------------------------------------------- start service -------------------------------------------------------------->
+.service .top-header-text::before {
+  @include content("We work with");
+}
+//------------------------------------------------------------- start unique section -------------------------------------------------------------->
+.unique-section {
+  background-image: url(../images/unique-design/bg-unique-design.jpg);
+  background-position: cover;
+}
+.unique-section .top-header-text::before {
+  @include content("For all devices");
+}
+.unique-section .overlay-img {
+  top: 40%;
+  left: 73%;
+  width: 37%;
+}
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 20px;
+  }
+  .unique-img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .unique-section .overlay-img {
+    top: 35%;
+    left: 63%;
+    width: 30%;
+  }
+}
+//------------------------------------------------------------- start what-we-do -------------------------------------------------------------->
+.what-we-do .top-header-text::before {
+  @include content("Service");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/arrow_512x512.png) !important;
+}
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+.accordion-body {
+  height: 150px;
+  overflow: scroll;
+}
+.accordion-body::-webkit-scrollbar-thumb {
+  background: #95e1d3;
+  border-radius: 4px;
+}
+//------------------------------------------------------------- start messages -------------------------------------------------------------->
+.messages {
+  background-color: #f8f8f8;
+}
+.msg-icon {
+  width: fit-content;
+  border: 2px solid $second-color;
+  height: max-content;
+}
+.msg-icon i {
+  font-size: convertToRem(50);
+}
+.messages span {
+  font-family: "edu";
+  position: relative;
+  padding-left: convertToRem(25);
+}
+@media screen and (max-width: 1400px) {
+  .messages span {
+    padding-left: 0;
+  }
+  .msg span.text::after {
+    display: none;
+  }
+}
+.msg span.text::after {
+  @extend %line-before-text;
+  width: 20px;
+  left: 0;
+  top: 50%;
+}
+@media screen and (max-width: 767px) {
+  blockquote {
+    font-size: convertToRem(12);
+  }
+}
+
+//------------------------------------------------------------- start team -------------------------------------------------------------->
+.our-team .top-header-text::before {
+  @include content("Who we are");
+}
+//------------------------------------------------------------- start work -------------------------------------------------------------->
+.brands {
+  background-color: $brand-color;
+}
+.brand {
+  transition: all 0.5s;
+}
+.brand:hover {
+  transform: scale(1.1);
+}
+.some-of-our-work{
+  overflow: hidden;
+}
+.work-img span:first-of-type{
+    @include gradient-colors;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+ z-index: -1;
+  top: -92px;
+  left: -183px;
+  transition: all 0.8s;
+}
+.work-img:hover span:first-of-type{
+  width: 200%;
+  height: 200%;
+}
+.work-img{
+  overflow: hidden;
+
+}
+.work-overlay{
+  opacity: 0;
+  top: 0;
+  z-index: 3;
+  transition: all 0.8s;
+}
+.work-img:hover .work-overlay{
+  opacity: 1;
+}
+
+//------------------------------------------------------------- start opinions-clients -------------------------------------------------------------->
+.opinions .msg span.text::after {
+  left: 23%;
+  top: 70%;
+}
+//------------------------------------------------------------- start happy-clients -------------------------------------------------------------->
+.happy-clients .top-header-text::before {
+  @include content("Happy Clients");
+}
+.happy-clients {
+  background-image: url(../images/happy-client/bg-happy-client.jpg);
+  background-position: center center;
+}
+.happy-clients .msg span.text::after {
+  left: 0;
+  top: 0;
+}
+.happy-clients {
+  .msg {
+    p {
+      width: fit-content;
+      border-bottom: solid 2px $main-color;
+    }
+  }
+}
+
+//------------------------------------------------------------- start map -------------------------------------------------------------->
+.map {
+  background-image: url(../images/map/bg-map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  .top-header-text::before {
+    @include content("");
+  }
+  i {
+    color: $main-color;
+  }
+  h2 {
+    color: $main-color;
+  }
+  .egypt-map {
+    display: none;
+  }
+}
+
+//------------------------------------------------------------- start contacts -------------------------------------------------------------->
+button[type="submit"] {
+  left: 79%;
+  background-color: $second-color;
+}
+@media screen and (max-width: 767px) {
+  .contacts button {
+    position: static !important;
+    margin: 2rem 0;
+    text-align: center;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $white-color;
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $main-color;
+}
+
+@media screen and (max-width: 768px)  {
+ 
+  h2{
+    font-size: convertToRem(20);
+  }
+  .top-header-text::before {
+    font-size: convertToRem(15);
+  }
+}
+@media screen and (max-width:992px) {
+  .work-overlay,.work-img span:first-of-type,.icons-overlay{
+    display: none !important;
+  }
+  .story-item:hover .story-img {
+    transform: translate(0);
+  }
+}

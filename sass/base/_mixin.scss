@@ -1,0 +1,27 @@
+@mixin fontSize($font-name, $url) {
+  @font-face {
+    font-family: $font-name;
+    src: $url;
+  }
+}
+@mixin content($value){
+  content:$value;
+}
+
+@mixin gradient-colors {
+  -webkit-background-image: linear-gradient(
+  top,
+  rgba(243, 129, 129, 0.9),
+  rgba(252, 227, 138, 0.9)
+);
+background: -o-linear-gradient(
+  top,
+  rgba(243, 129, 129, 0.9),
+  rgba(252, 227, 138, 0.9)
+);
+background-image: linear-gradient(
+  to bottom,
+  rgba(243, 129, 129, 0.9),
+  rgba(252, 227, 138, 0.9)
+);
+}

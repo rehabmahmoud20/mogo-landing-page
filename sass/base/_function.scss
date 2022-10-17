@@ -1,0 +1,4 @@
+@function convertToRem($size){
+$result : $size /16;
+@return #{$result}rem;
+}

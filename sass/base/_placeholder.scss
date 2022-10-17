@@ -1,0 +1,27 @@
+@import "./base/function";
+
+%after-before-style {
+  transform: translateX(-50%);
+  position: absolute;
+}
+%before-style{
+  bottom: 100%;
+  left: 50%;
+  font-family: "edu";
+  width: fit-content;
+  font-size: convertToRem(20);
+  font-weight: 600;
+}
+
+%line-before-text{
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: $main-color;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+}
